@@ -7,6 +7,8 @@
   --colorMed: #dddddd;
   --colorLight: #ffffff;
   --colorDark: #222831;
+  --colorGreen: #007965;
+  --colorRed: #ec4646;
   --borderRadius: 3px;
   --transition: all 0.3s ease-in-out;
   --maxWidth: 600px;
@@ -25,6 +27,7 @@ body {
   font-family: var(--fontFamily);
   background-color: var(--colorLight);
   color: var(--colorDark);
+  font-size: 16px;
 }
 
 li {

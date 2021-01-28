@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { css, jsx } from '@emotion/react'
+import { css } from '@emotion/react'
 import React from 'react'
 import { AiOutlineUnorderedList } from 'react-icons/ai'
 
@@ -14,6 +14,8 @@ const Header = () => {
         h1 {
           display: flex;
           align-items: center;
+          max-width: var(--maxWidth);
+          margin: auto;
 
           .icon {
             color: var(--colorSecondary);
