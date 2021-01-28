@@ -4,7 +4,16 @@ import React from 'react'
 import Alert from './alert'
 import List from './list'
 
-const Form = ({ handleSubmit, todo, setTodo, alert, list, removeAlert }) => {
+const Form = ({
+  handleSubmit,
+  todo,
+  setTodo,
+  alert,
+  list,
+  removeAlert,
+  deleteItem,
+  editItem,
+}) => {
   return (
     <div
       css={css`
@@ -40,7 +49,7 @@ const Form = ({ handleSubmit, todo, setTodo, alert, list, removeAlert }) => {
         )}
       </div>
 
-      <List list={list} />
+      <List list={list} deleteItem={deleteItem} editItem={editItem} />
       <form onSubmit={handleSubmit}>
         <input
           type="text"

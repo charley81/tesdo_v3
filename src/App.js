@@ -40,6 +40,17 @@ function App() {
       handleAlert(true, 'danger', 'enter a item first')
     } else if (todo && editing) {
       // handle edit
+      setList(
+        list.map(item => {
+          if (item.id === editId) {
+            return { ...todo, msg: todo }
+          }
+          return item
+        })
+      )
+      setTodo('')
+      setEditId(null)
+      setEditing(false)
     } else {
       // add item
       const newItem = { id: uuidv4(), msg: todo }
@@ -47,6 +58,18 @@ function App() {
       handleAlert(true, 'success', 'item added')
       setTodo('')
     }
+  }
+
+  const deleteItem = id => {
+    setList(list.filter(item => item.id !== id))
+    handleAlert(true, 'danger', 'item deleted')
+  }
+
+  const editItem = id => {
+    const selectedItem = list.find(item => item.id === id)
+    setEditId(id)
+    setEditing(true)
+    setTodo(selectedItem.msg)
   }
 
   return (
@@ -59,6 +82,8 @@ function App() {
         handleSubmit={handleSubmit}
         list={list}
         removeAlert={handleAlert}
+        deleteItem={deleteItem}
+        editItem={editItem}
       />
     </div>
   )

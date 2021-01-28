@@ -3,7 +3,7 @@ import { css } from '@emotion/react'
 import React from 'react'
 import { MdModeEdit, MdDelete } from 'react-icons/md'
 
-const List = ({ list }) => {
+const List = ({ list, deleteItem, editItem }) => {
   return (
     <ul
       css={css`
@@ -21,12 +21,13 @@ const List = ({ list }) => {
       `}
     >
       {list.map(item => {
+        const { id, msg } = item
         return (
-          <li key={item.id}>
-            {item.msg}
+          <li key={id}>
+            {msg}
             <div className="btn-container">
-              <MdModeEdit className="icon" />
-              <MdDelete className="icon" />
+              <MdModeEdit className="icon" onClick={() => editItem(id)} />
+              <MdDelete className="icon" onClick={() => deleteItem(id)} />
             </div>
           </li>
         )
