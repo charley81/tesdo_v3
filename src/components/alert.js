@@ -8,7 +8,7 @@ const Alert = ({ list, removeAlert, alert }) => {
       removeAlert()
     }, 1000)
     return () => clearTimeout(timeout)
-  }, [list])
+  }, [list, removeAlert])
 
   return (
     <div
