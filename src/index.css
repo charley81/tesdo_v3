@@ -26,3 +26,7 @@ body {
   background-color: var(--colorLight);
   color: var(--colorDark);
 }
+
+li {
+  list-style: none;
+}
